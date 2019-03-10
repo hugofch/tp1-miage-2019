@@ -1,5 +1,5 @@
 # Nom des étudiants de ce binôme 
-(les DEUX noms) : XXXXX et XXXXXX
+(les DEUX noms) : Hugo FICHOT et Pierre BIZOS
 
 Commentaires éventuels des étudiants : XXXXXX
 
