@@ -94,13 +94,12 @@ Point de synchro : repartir du projet fourni `mailreader-ex5-ini`
 
 cucumber-jvm est l'implémentation java de cucumber, un framework de BDD (Behavioral Driven Development) très populaire. Il est existe d'autres : JBehave (l'original, très similaire), Concordion, JGiven ...
 
-Pour les besoins du TP, nous utilisons ici les notions de Scenario Outline, de Data Table et de Transformer permettant l'utilisation de données tabulaires et de formats custom.
+Pour les besoins du TP, nous utilisons ici les notions de Scenario Outline, de Data Table et de Transformer permettant l'utilisation de données tabulaires et de formats custom. La syntaxe Cucumber/Gherkin est disponible ![ici](https://docs.cucumber.io/gherkin/reference/).
 
 1) Compléter la classe `MailComparaisonStep`
 2) Lancer le test `CucumberRunnerTest` en junit
 3) Ouvrir dans un navigateur `target/cucumber/index.html`
 4) Ajouter des cas de test dans la feature `trier_mail.feature`. Notez qu'aucun nouveau code n'a été nécessaire pour ajouter ces tests contrairement à un TU.
-
 5) Ecrire un scenario simple au format textuel et les steps correspondants.
 
 # Finalisation
