@@ -1,4 +1,4 @@
-package com.acme.mailreader.bdd;
+	package com.acme.mailreader.bdd;
 
 import java.util.Comparator;
 import java.util.HashMap;
@@ -40,6 +40,7 @@ public class MailComparaisonStep {
 	public void un_premier_mail(boolean importance, Statut statut,
 			String sujet, String date) throws DateIncorrecteException {
 		//TODO
+		
 	}
 
 	@Given("^un second mail avec l'importance \"([^\"]*)\", le statut \"([^\"]*)\", le sujet \"([^\"]*)\" et la date \"([^\"]*)\"$")

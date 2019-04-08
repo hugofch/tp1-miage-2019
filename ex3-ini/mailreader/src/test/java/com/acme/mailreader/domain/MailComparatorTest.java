@@ -34,7 +34,11 @@ public class MailComparatorTest {
 	
 	//TODO
 	//Autres tests unitaires
-	
-	
+	@Test
+	public final void egauxSideuxMailEgaux() {
+		Mail mail1 = new Mail();
+		Mail mail2 = mail1;
+		assertThat(comparator.compare(mail1, mail2), is(0));
+	}
 	
 }

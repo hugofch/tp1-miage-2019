@@ -1,0 +1,28 @@
+TP Ingénierie Logicielle - Bertrand FLORAT
+
+Exercice 1 : (mailreader) -> Refactoring
+1. Réusiner la classe "MailComparator"
+
+Exercice 2 : (mailreader) -> Découpage en couches
+1. Réorganiser le code dans les couches standards
+    Faire en sorte par exemple que divers frontends puisse récupérer les mails. Nous aurons dans ce TP un seul frontend : un CLI (ligne de commande) qui sera implémenté sous la forme d'une classe ClientMail avec main(). Cette méthode main attend deux arguments : un booleen production qui précise si le mail doit vraiment être envoyé (true) ou si nous sommes en environnement de recette (false). Le second argument est le sujet du mail.
+Ajouter une couche "commun" pour les éléments communs entre les couches (ex : les exceptions)
+
+Exercice 3 : (mailreader-ex3-ini) -> Injection de dépendances
+1. Compléter la méthodes configure()
+2. Injecter un "MailService" dans l'objet "InterpreteurLigneCommande" via @Inject
+3. Injecter un "MailSender" dans le "MailService"
+
+Exercice 4 : (mailreader-ex3-ini) -> Tests Unitaires
+1. Compléter les tests unitaires et en écrire de nouveaux dans les cas "MailTest" et "MailComparatorTest". Enlever les @Ignore si il y en a
+2. Exécuter les tests (c'est automatique si on fait du test continu avec "infinites" a priori)
+
+Exercice 5 : (mailreader-ex5-ini) -> Behavioral Driven Development avec Cucumber-jvm
+1. Compléter la classe "MailComparaisonStep"
+2. Lancer le test "CucumberRunnerTest" en jUnit
+3. Ouvrir dans un navigateur "target/cucumber/index.html"
+4. Ajouter des cas de test dans la feature "trier_mail.feature". (Pas besoin de code pour ajouter ces tests normalement)
+5. Ecrire un scénario (en textuel) et les étapes correspondantes
+
+
+Finalisation : Envoyer le projet sur Github
