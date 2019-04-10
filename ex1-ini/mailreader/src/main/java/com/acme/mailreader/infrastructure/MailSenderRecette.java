@@ -1,5 +1,12 @@
-package com.acme.mailreader.infrastructure;
+package infrastructure;
+import domaine.Mail;
+import service.MailSender;
 
-public class MailSenderRecette {
+public class MailSendRecette implements MailSender{
+
+	@Override
+	public void envoyerMail(Mail leMail) {	
+		System.out.println("Mail envoyé en de recette.");
+	}
 
 }
