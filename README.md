@@ -20,6 +20,7 @@ Nous fournissons trois projets Eclipse servant de base de travail aux exercices 
 * Le projet ex1-ini est le code initial du TP et sert de base aux exercices 1 et 2. Une fois terminés, faire un push vers Github et fermer le projet Eclipse (ne pas le supprimer).
 * Le projet ex3-ini sert de code de base aux exercices 3 et 4. Une fois terminés, faire un push vers Github et fermer le projet Eclipse (ne pas le supprimer).
 * Le projet ex5-ini sert de code de base à l'exercice 5. Une fois terminé faire un push vers Github.
+* Dans Eclipse, faire File -> Import -> Import existing Maven project et cocher le projet à importer
 
 # Exercice 1 - Refactoring
 _Temps estimé : 20 mins_
@@ -70,12 +71,14 @@ bind(MonInterface.class).to(MaClasseConcrete.class)
 ```
 Il est bien sûr également possible d'injecter des classes concrètes (comme ici le `MailService`).
 
-1) Compléter la méthode `configure()`
-Observer la méthode `ClientMail.main()` : elle charge la configuration et créé l'objet de haut niveau de l'arbre d'injection : un `InterpreteurLigneCommande`.
+1) Observer la méthode `ClientMail.main()` : elle charge la configuration et créé l'objet de haut niveau de l'arbre d'injection : un `InterpreteurLigneCommande`.
 
 2) L'objet `InterpreteurLigneCommande` a besoin d'un `MailService`. Lui injecter (injection par constructeur) via l’annotation (standard java) `@Inject`.
 
 3) Faire de même pour l'injection du `MailSender` dans le `MailService`.
+
+4) Compléter la méthode `configure()` de la classe `MailReaderModule` pour spécifier l'implémentation de `MailSender` à injecter.
+
 
 # Exercice 4 - TU
 _Temps estimé : 30 mins_
@@ -91,13 +94,12 @@ Point de synchro : repartir du projet fourni `mailreader-ex5-ini`
 
 cucumber-jvm est l'implémentation java de cucumber, un framework de BDD (Behavioral Driven Development) très populaire. Il est existe d'autres : JBehave (l'original, très similaire), Concordion, JGiven ...
 
-Pour les besoins du TP, nous utilisons ici les notions de Scenario Outline, de Data Table et de Transformer permettant l'utilisation de données tabulaires et de formats custom.
+Pour les besoins du TP, nous utilisons ici les notions de Scenario Outline, de Data Table et de Transformer permettant l'utilisation de données tabulaires et de formats custom. La syntaxe Cucumber/Gherkin est disponible ![ici](https://docs.cucumber.io/gherkin/reference/).
 
 1) Compléter la classe `MailComparaisonStep`
 2) Lancer le test `CucumberRunnerTest` en junit
 3) Ouvrir dans un navigateur `target/cucumber/index.html`
 4) Ajouter des cas de test dans la feature `trier_mail.feature`. Notez qu'aucun nouveau code n'a été nécessaire pour ajouter ces tests contrairement à un TU.
-
 5) Ecrire un scenario simple au format textuel et les steps correspondants.
 
 # Finalisation

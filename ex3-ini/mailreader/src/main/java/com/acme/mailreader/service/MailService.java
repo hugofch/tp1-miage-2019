@@ -11,7 +11,7 @@ public class MailService {
 	
 	private static final int TAILLE_MAX_SUJET = 20;
 	
-	//TODO : injecter par constructeur un sender
+	
 	private MailSender sender;
 	
 	
@@ -19,8 +19,12 @@ public class MailService {
 		super();
 	}
 
+	@Inject public MailService(MailSender sender) {
+		this.sender = sender;
+	}
+	
 	/**
-	 * operation d'envoir de mail
+	 * operation d'envoi de mail
 	 * 
 	 * @param le
 	 *            mail à envoyer
