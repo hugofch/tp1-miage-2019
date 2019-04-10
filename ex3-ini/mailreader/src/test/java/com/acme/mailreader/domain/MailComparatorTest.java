@@ -32,13 +32,33 @@ public class MailComparatorTest {
 		assertThat(comparator.compare(mail1, mail2), is(0));
 	}
 	
-	//TODO
-	//Autres tests unitaires
 	@Test
 	public final void egauxSideuxMailEgaux() {
 		Mail mail1 = new Mail();
 		Mail mail2 = mail1;
 		assertThat(comparator.compare(mail1, mail2), is(0));
+	}
+	
+	@Test 
+	public final void secondPlusPetitSiSujetEgalNul() throws DateIncorrecteException {
+		Mail mail1 = new Mail.Builder("Quelquechose").important(false).statut(Statut.READ).date(Instant.now()).build();
+		Mail mail2 = new Mail.Builder(null).important(false).statut(Statut.READ).date(Instant.now()).build();
+		assertThat(comparator.compare(mail1, mail2),is(-1));	
+	}
+	
+	@Test 
+	public final void premierPlusPetitSiImportanceInferieure() throws DateIncorrecteException {
+		Mail mail1 = new Mail.Builder("Quelquechose").important(true).statut(Statut.READ).date(Instant.now()).build();
+		Mail mail2 = new Mail.Builder("Quelquechose").important(false).statut(Statut.UNSENT).date(Instant.now()).build();
+		assertThat(comparator.compare(mail1, mail2),is(1));	
+	}
+	
+	
+	@Test 
+	public final void secondPlusPetitSiImportanceInferieure() throws DateIncorrecteException {
+		Mail mail1 = new Mail.Builder("Quelquechose").important(false).statut(Statut.READ).date(Instant.now()).build();
+		Mail mail2 = new Mail.Builder("Quelquechose").important(true).statut(Statut.UNSENT).date(Instant.now()).build();
+		assertThat(comparator.compare(mail1, mail2),is(-1));	
 	}
 	
 }
