@@ -1,16 +1,20 @@
 package com.acme.mailreader.bdd;
 
+import static org.junit.Assert.assertThat;
+
 import java.time.Instant;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.hamcrest.core.IsEqual;
 import org.junit.runner.RunWith;
 
 import com.acme.mailreader.domain.DateIncorrecteException;
 import com.acme.mailreader.domain.Mail;
 import com.acme.mailreader.domain.Mail.Statut;
 import com.acme.mailreader.domain.MailComparator;
+import com.google.inject.matcher.Matcher;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
@@ -68,8 +72,13 @@ public class MailComparaisonStep {
 
 	@Then("^le tri doit retourner \"([^\"]*)\"$")
 	public void le_tri_doit_retourner(String resu) throws Throwable {
+	
+		
 		assertThat(resu, is(resultatComparaison));
 	}
+
+	
+	
 	
 
 }

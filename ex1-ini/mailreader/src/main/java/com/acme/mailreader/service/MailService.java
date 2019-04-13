@@ -1,6 +1,8 @@
 package com.acme.mailreader.service;
 import com.acme.mailreader.domain.Mail;
-import com.acme.mailreader.infrastructure.*;
+import com.acme.mailreader.infrastructure.MailSenderProduction;
+import com.acme.mailreader.infrastructure.MailSenderRecette;
+
 
 public class MailService {
 	public MailService() {};

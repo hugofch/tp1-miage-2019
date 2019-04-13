@@ -3,10 +3,13 @@ package com.acme.mailreader.domain;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
+import java.time.Instant;
+
 import org.junit.Before;
 import org.junit.Test;
 
 import com.acme.mailreader.domain.Mail;
+import com.acme.mailreader.domain.Mail.Statut;
 import com.acme.mailreader.domain.MailComparator;
 
 public class MailComparatorTest {
