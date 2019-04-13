@@ -1,17 +1,27 @@
-	package com.acme.mailreader.bdd;
+package com.acme.mailreader.bdd;
 
+import java.time.Instant;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
+
+import org.junit.runner.RunWith;
 
 import com.acme.mailreader.domain.DateIncorrecteException;
 import com.acme.mailreader.domain.Mail;
 import com.acme.mailreader.domain.Mail.Statut;
 import com.acme.mailreader.domain.MailComparator;
 
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
+import cucumber.api.PendingException;  
+import cucumber.api.java.en.Given;  
+import cucumber.api.java.en.Then;  
+import cucumber.api.java.en.When; 
+
+
+@RunWith(Cucumber.class)
+@CucumberOptions(plugin = { "pretty", "html:target/cucumber" }, features = { "src/test/resources/" })
 
 /**
  * Les steps (actions) du test

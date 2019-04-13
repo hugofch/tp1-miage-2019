@@ -1,4 +1,4 @@
-ackage com.acme.mailreader.domain;
+package com.acme.mailreader.domain;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
